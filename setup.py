@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='mongodb_package',
+    name='source',
     version='0.1.0',
     author='Shriharran',
     author_email='shriharran.radhakrishnan@digit7.ai',

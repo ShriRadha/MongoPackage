@@ -1,0 +1,12 @@
+README.md
+setup.py
+source.egg-info/PKG-INFO
+source.egg-info/SOURCES.txt
+source.egg-info/dependency_links.txt
+source.egg-info/requires.txt
+source.egg-info/top_level.txt
+tests/__init__.py
+tests/test_client.py
+tests/test_errors.py
+tests/test_operations.py
+tests/test_utils.py
