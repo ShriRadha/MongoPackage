@@ -1,0 +1,7 @@
+pymongo>=3.10
+dnspython>=1.16.0
+pip
+pytest
+wheel
+twine
+setuptools

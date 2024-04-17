@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: mongodb_package
+Version: 0.1.0
+Summary: A MongoDB client package for Python
+Author: Shriharran
+Author-email: shriharran.radhakrishnan@digit7.ai
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pymongo>=3.10
+Requires-Dist: dnspython>=1.16.0
+
+# MongoDB Client Package
+
+## Overview
+This package provides an easy-to-use client for MongoDB operations in Python.
+
+## Installation
+Install the package using pip:
+```bash
+pip install .
