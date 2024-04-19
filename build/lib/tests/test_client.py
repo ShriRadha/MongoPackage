@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from source.client import MongoClient
 
 class TestMongoClient(unittest.TestCase):
-    @patch('mongodb_package.client.PymongoClient')
+    @patch('client.PymongoClient')
     def test_connect(self, mock_mongo_client):
         # Setup
         mock_client_instance = MagicMock()

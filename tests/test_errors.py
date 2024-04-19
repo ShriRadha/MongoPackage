@@ -6,35 +6,35 @@ from source.exceptions import (DatabaseConnectionError, InsertionError, Document
                         UpdateError, DeletionError)
 
 class TestExceptionHandling(unittest.TestCase):
-    @patch('mongodb_package.client.PymongoClient')
+    @patch('client.PymongoClient')
     def test_database_connection_error(self, mock_connect):
         mock_connect.side_effect = DatabaseConnectionError("Failed to connect to database")
         with self.assertRaises(DatabaseConnectionError):
             ops = MongoClient("testdb")
             ops.connect("testdb")
 
-    @patch('mongodb_package.operations.MongoDBOperations.insert_document')
+    @patch('operations.MongoDBOperations.insert_document')
     def test_insertion_error(self, mock_insert):
         mock_insert.side_effect = InsertionError("Insertion failed")
         ops = MongoDBOperations("mongodb://localhost:27017", "testdb")
         with self.assertRaises(InsertionError):
             ops.insert_document('test_collection', {'data': 'test'})
 
-    @patch('mongodb_package.operations.MongoDBOperations.find_documents')
+    @patch('operations.MongoDBOperations.find_documents')
     def test_document_not_found_error(self, mock_find):
         mock_find.side_effect = DocumentNotFoundError("No documents found")
         ops = MongoDBOperations("mongodb://localhost:27017", "testdb")
         with self.assertRaises(DocumentNotFoundError):
             ops.find_documents('test_collection', {'query': 'none'})
 
-    @patch('mongodb_package.operations.MongoDBOperations.update_documents')
+    @patch('operations.MongoDBOperations.update_documents')
     def test_update_error(self, mock_update):
         mock_update.side_effect = UpdateError("Update failed")
         ops = MongoDBOperations("mongodb://localhost:27017", "testdb")
         with self.assertRaises(UpdateError):
             ops.update_documents('test_collection', {'name': 'test'}, {'data': 'new'})
 
-    @patch('mongodb_package.operations.MongoDBOperations.delete_documents')
+    @patch('operations.MongoDBOperations.delete_documents')
     def test_deletion_error(self, mock_delete):
         mock_delete.side_effect = DeletionError("Deletion failed")
         ops = MongoDBOperations("mongodb://localhost:27017", "testdb")
